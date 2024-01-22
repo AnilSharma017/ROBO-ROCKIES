@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+#include<time.h>
+
+void delay(float number_of_seconds)
+{
+    
+    float milli_seconds = 1000 * number_of_seconds;
+  
+    clock_t start_time = clock();
+ 
+    while (clock() < start_time + milli_seconds)
+        ;
+}
+
+void Circle(float r) {
+    for (float i=-r;i<r;i++) 
+		 {
+			for(float j=-r;j<r;j++)
+			{
+			  if(i*i+j*j <=r)
+			  {
+                printf("0");
+              } 
+              else
+              {
+               printf(" ");
+              }
+       		}
+            delay(0.1);
+            printf("\n");
+        }
+        
+    }
+
+int main() {
+    float radius=5;
+
+    //printf("\nEnter the radius for circle to draw: \n");
+    //scanf("%f",&radius);
+    delay(1);
+    printf("....drawing circle....\n");
+    Circle(radius);
+    delay(1);
+    printf("....circle drawing completed....\n");
+    return 0;
+}
